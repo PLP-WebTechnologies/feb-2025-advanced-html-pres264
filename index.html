@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML5 Elements and Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced HTML5 Elements Demonstration</h1>
+    </header>
+
+    <main>
+        <!-- Ordered List with Roman Numerals -->
+        <section>
+            <h2>Ordered List with Roman Numerals</h2>
+            <ol type="I">
+                <li>First item in Roman numerals</li>
+                <li>Second item in Roman numerals</li>
+                <li>Third item in Roman numerals</li>
+                <li>Fourth item in Roman numerals</li>
+                <li>Fifth item in Roman numerals</li>
+            </ol>
+        </section>
+
+        <!-- External Image from Pexels -->
+        <section>
+            <h2>External Image from Pexels</h2>
+            <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg" 
+                 alt="Beautiful landscape with river and trees" 
+                 title="Nature Landscape from Pexels">
+            <p>This image is sourced from <a href="https://pexels.com" target="_blank">Pexels.com</a></p>
+        </section>
+
+        <!-- Contacts Table -->
+        <section>
+            <h2>Contacts Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>123 Main St, Anytown</td>
+                        <td>555-0101</td>
+                        <td>john.doe@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>456 Oak Ave, Somewhere</td>
+                        <td>555-0202</td>
+                        <td>jane.smith@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Robert Johnson</td>
+                        <td>789 Pine Rd, Nowhere</td>
+                        <td>555-0303</td>
+                        <td>robert.j@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Emily Davis</td>
+                        <td>321 Elm Blvd, Anywhere</td>
+                        <td>555-0404</td>
+                        <td>emily.d@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Brown</td>
+                        <td>654 Cedar Ln, Everywhere</td>
+                        <td>555-0505</td>
+                        <td>michael.b@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Registration Form -->
+        <section>
+            <h2>Registration Form</h2>
+            <form id="registrationForm" novalidate>
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name">Full Name:*</label>
+                    <input type="text" id="name" name="name" 
+                           placeholder="Enter your full name" 
+                           required 
+                           minlength="3"
+                           pattern="[A-Za-z ]+">
+                    <small>Must be at least 3 characters (letters and spaces only)</small>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email Address:*</label>
+                    <input type="email" id="email" name="email" 
+                           placeholder="Enter your email address" 
+                           required>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">Password:*</label>
+                    <input type="password" id="password" name="password" 
+                           placeholder="Create a password" 
+                           required 
+                           minlength="8"
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters">
+                    <small>Must be 8+ characters with at least one uppercase, one lowercase, and one number</small>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="form-group">
+                    <label for="dob">Date of Birth:*</label>
+                    <input type="date" id="dob" name="dob" 
+                           required 
+                           max="2005-12-31">
+                </div>
+
+                <!-- Country Dropdown -->
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="">Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Gender Radio Buttons -->
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male" style="display: inline;">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female" style="display: inline;">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other" style="display: inline;">Other</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="prefer-not" name="gender" value="prefer-not">
+                        <label for="prefer-not" style="display: inline;">Prefer not to say</label>
+                    </div>
+                </div>
+
+                <!-- Interests Checkboxes -->
+                <div class="form-group">
+                    <label>Interests (select all that apply):</label>
+                    <div>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="sports" style="display: inline;">Sports</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="music" name="interests" value="music">
+                        <label for="music" style="display: inline;">Music</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="reading" name="interests" value="reading">
+                        <label for="reading" style="display: inline;">Reading</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="travel" name="interests" value="travel">
+                        <label for="travel" style="display: inline;">Travel</label>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="form-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" style="display: inline;">I agree to the terms and conditions*</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Multimedia Section -->
+        <section>
+            <h2>Multimedia Elements</h2>
+            
+            <!-- Audio Element -->
+            <h3>Audio Example</h3>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <!-- Video Element -->
+            <h3>Video Example</h3>
+            <video width="640" height="360" controls>
+                <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Advanced HTML5 Demo. All rights reserved.</p>
+    </footer>
+</body>
+</html>
